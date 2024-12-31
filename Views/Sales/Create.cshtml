@@ -1,0 +1,55 @@
+﻿@model SalesTrackerMVC.Models.PageViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Items</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="salesTable.Sale_Id" class="control-label"></label>
+                <input asp-for="salesTable.Sale_Id" class="form-control" />
+                <span asp-validation-for="salesTable.Sale_Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="salesTable.Item_ID" class="control-label"></label>
+                <input asp-for="salesTable.Item_ID" class="form-control" />
+                <span asp-validation-for="salesTable.Item_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="salesTable.Price_Sold" class="control-label"></label>
+                <input asp-for="salesTable.Price_Sold" class="form-control" />
+                <span asp-validation-for="salesTable.Price_Sold" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="salesTable.Date_Sold" class="control-label"></label>
+                <input asp-for="salesTable.Date_Sold" class="form-control" />
+                <span asp-validation-for="salesTable.Date_Sold" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="salesTable.Category" class="control-label"></label>
+                <input asp-for="salesTable.Category" class="form-control" />
+                <span asp-validation-for="salesTable.Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="salesTable.Location_Sold" class="control-label"></label>
+                <input asp-for="salesTable.Location_Sold" class="form-control" />
+                <span asp-validation-for="salesTable.Location_Sold" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

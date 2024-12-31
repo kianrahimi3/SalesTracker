@@ -1,0 +1,52 @@
+﻿@model SalesTrackerMVC.Models.Sales
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Sales</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Sale_Id" />
+            <div class="form-group">
+                <label asp-for="Item_ID" class="control-label"></label>
+                <input asp-for="Item_ID" class="form-control" />
+                <span asp-validation-for="Item_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price_Sold" class="control-label"></label>
+                <input asp-for="Price_Sold" class="form-control" />
+                <span asp-validation-for="Price_Sold" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date_Sold" class="control-label"></label>
+                <input asp-for="Date_Sold" class="form-control" />
+                <span asp-validation-for="Date_Sold" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+                <input asp-for="Category" class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location_Sold" class="control-label"></label>
+                <input asp-for="Location_Sold" class="form-control" />
+                <span asp-validation-for="Location_Sold" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

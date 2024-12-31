@@ -1,0 +1,59 @@
+﻿@model SalesTrackerMVC.Models.PageViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.itemsTable.Item_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.itemsTable.Item)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.itemsTable.Purchase_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.itemsTable.Purchase_Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.itemsTable.Category_ID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Items.ToList()) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item)
+            </td>
+            <td>
+                 @Html.DisplayFor(modelItem => item.Purchase_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Purchase_Price)
+            </td>
+            <td>
+                 @Html.DisplayFor(modelItem => item.Category_ID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Item_ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Item_ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Item_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,64 @@
+﻿@model SalesTrackerMVC.Models.PageViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="text-center">
+    <h4 class="display-4">Total Sold Vs. Purchased</h4>
+    <br />
+    <div class="card">
+        <div class="card-header">
+            <div class="chart">
+                <canvas id="piechart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+30JU5yExlq6GSYGSHk7tPXikynsS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+
+<script>
+    var pieChartCanvas = document.getElementById("piechart");
+
+    var pieChart = new Chart(pieChartCanvas, {
+        type: 'pie',
+        data: {
+            labels: ['Outgoing', 'Incoming'],
+            datasets: [{
+                data: [@Model.counts["TotalPurchased"], @Model.counts["TotalSold"] ],
+                borderWidth: 0,
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(64, 162, 235)',
+                    'rgb(157, 230, 41)',
+                    'rgb(41, 224, 230)',
+                    'rgb(255, 205, 86)'
+                ],
+                pieChartCanvas: [
+                    'rgb(255, 99, 132)',
+                    'rgb(64, 162, 235)',
+                    'rgb(157, 230, 41)',
+                    'rgb(41, 224, 230)',
+                    'rgb(255, 205, 86)'
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: "bottom",
+                labels: {
+                    boxWidth: 11,
+                    fontColor: "#757681",
+                    fontSize: 11
+                }
+            }
+        }
+    });
+</script>
