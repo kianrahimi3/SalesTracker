@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="chilkat-x64" Version="10.1.0" />
+    <PackageReference Include="CMS365.EbaySharp" Version="8.1.1" />
     <PackageReference Include="eBay.OAuth.Client" Version="2.0.3" />
     <PackageReference Include="Microsoft.AspNet.WebApi" Version="5.3.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
@@ -19,6 +20,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Selenium.RC" Version="3.1.0" />
   </ItemGroup>
 
   <ItemGroup>
